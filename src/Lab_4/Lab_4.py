@@ -1,5 +1,6 @@
 class Perfume:
-    def __init__(self, volume=0, price=0.0, manufacturer="", public_numeric=0, public_string=""):
+    def __init__(self, volume=0, price=0.0, manufacturer="",
+                 public_numeric=0, public_string=""):
         self.__volume = volume
         self.__price = price
         self.__manufacturer = manufacturer
@@ -28,8 +29,10 @@ class Perfume:
         return f"{self.__manufacturer}: {self.__volume}ml, {self.__price} UAH"
 
     def __repr__(self):
-        return f"Perfume({self.__volume}, {self.__price}, '{self.__manufacturer}', {self.public_numeric}, '{self.public_string}')"
-
+    return (
+        f"Perfume({self.__volume}, {self.__price}, '{self.__manufacturer}', "
+        f"{self.public_numeric}, '{self.public_string}')"
+    )
     def __del__(self):
         print(f"Deleting Perfume: {self.__manufacturer}")
 
